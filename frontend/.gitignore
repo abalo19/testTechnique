@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# TypeScript output directory
+dist/
+# Exclude all compiled JavaScript files
+*.js
+
