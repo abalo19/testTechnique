@@ -8,6 +8,6 @@ const db_1 = __importDefault(require("./config/db"));
 db_1.default.on("error", console.error.bind(console, "MongoDB connection error:"));
 db_1.default.once("open", () => {
     app_1.app.listen(5000, () => {
-        console.log("Server listening on port 3000");
+        console.log("Server listening on port 5000");
     });
 });
