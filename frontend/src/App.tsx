@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {AppNavBar} from "./components/AppNavBar/AppNavBar.tsx";
+import { Routes, Route } from "react-router-dom";
+import EvolutionPrix from './components/pages/EvolutionPrix.tsx';
+import MeilleurMoment from './components/pages/MeilleurMoment.tsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppNavBar/>
+      <Routes>
+        <Route path="/" element={<EvolutionPrix/>}/>
+        <Route path="/MeilleurMoment" element={<MeilleurMoment/>}/>
+      </Routes>
     </div>
   );
 }
