@@ -1,9 +1,9 @@
 import { app } from './app';
-import db from "./config/db";
+// import db from "./config/db";
 
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => {
-  app.listen(5000, () => {
-    console.log("Server listening on port 3000");
-  });
+const port = 5000;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
+
