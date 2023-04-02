@@ -9,27 +9,27 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Grid, Box, Typography } from '@material-ui/core';
 
-function createData(
-id: number,
-date: string,
-action: string,
-name: string,
-prixunitaire: string,
-nombreaction: string,
-total: string,
-portefeuille: string,
-) {
-  return { id, date, action, name, prixunitaire, nombreaction, total, portefeuille };
-}
+// function createData(
+// id: number,
+// date: string,
+// action: string,
+// name: string,
+// prixunitaire: string,
+// nombreaction: string,
+// total: string,
+// portefeuille: string,
+// ) {
+//   return { id, date, action, name, prixunitaire, nombreaction, total, portefeuille };
+// }
 
-const rows = [
-  createData(1, '01/01/2022', 'ACHAT', 'AMAZON', '1350.98', '4', '5403.92', '94596.08'),
-  createData(2, '01/01/2022', 'ACHAT', 'GOOGLE', '1951.77', '4', '3903.54', '90692.54'),
-  createData(3, '01/01/2022', 'VENTE', 'AMAZON', '1350.98', '4', '5403.92', '96132.42'),
-  createData(4, '01/01/2022', 'ACHAT', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
-  createData(5, '01/01/2022', 'VENTE', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
-  createData(5, '01/01/2022', 'VENTE', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
-];
+// const rows = [
+//   createData(1, '01/01/2022', 'ACHAT', 'AMAZON', '1350.98', '4', '5403.92', '94596.08'),
+//   createData(2, '01/01/2022', 'ACHAT', 'GOOGLE', '1951.77', '4', '3903.54', '90692.54'),
+//   createData(3, '01/01/2022', 'VENTE', 'AMAZON', '1350.98', '4', '5403.92', '96132.42'),
+//   createData(4, '01/01/2022', 'ACHAT', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
+//   createData(5, '01/01/2022', 'VENTE', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
+//   createData(5, '01/01/2022', 'VENTE', 'XXXXXX', 'XXXX,XX', 'XX', '5403.92', 'XXXX,XX'),
+// ];
 
 const MeilleurMoment = () => {
   const [dataTable, setDataTable] = useState([]);

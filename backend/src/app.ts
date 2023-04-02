@@ -1,7 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 // Charger les variables d'environnement
@@ -38,13 +37,5 @@ app.use(
     }
   );
 
-  app.use("/DataGraph", DataGraph);
-
-
-  
-// Connexion à la base de données MongoDB
-mongoose.connect("mongodb://localhost/tddDabase")
-.then(() => console.log("Connected to MongoDB"))
-.catch((err) => console.log("Failed to connect to MongoDB", err));
-
+app.use("/DataGraph", DataGraph);
 

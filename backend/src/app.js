@@ -7,7 +7,6 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const body_parser_1 = __importDefault(require("body-parser"));
-const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 // Charger les variables d'environnement
 dotenv_1.default.config();
@@ -26,7 +25,3 @@ exports.app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
 exports.app.use("/DataGraph", dataGraph_route_1.default);
-// Connexion à la base de données MongoDB
-mongoose_1.default.connect("mongodb://localhost:27017/tddDabase")
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.log("Failed to connect to MongoDB", err));
