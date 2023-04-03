@@ -36,7 +36,7 @@ const MeilleurMoment = () => {
 
   const retrieveDetails = () => {
     
-        axios.get(`http://localhost:5000/DataGraph/FindAllTable`)
+        axios.get(`http://tdd.biborne.com/DataGraph/FindAllTable`)
           .then(response => {
             
             const InitialArray = response.data.updatedDatagraphs;

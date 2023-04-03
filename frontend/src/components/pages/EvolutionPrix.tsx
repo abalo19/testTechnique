@@ -20,7 +20,7 @@ const EvolutionPrix = () => {
   
   const retrieveDetails = () => {
     
-        axios.get(`http://localhost:5000/DataGraph/FindAllAV`)
+        axios.get(`http://tdd.biborne.com/DataGraph/FindAllAV`)
           .then(response => {
             setDataAmazonMin(response.data.minPriceAmazon.lowestPriceOfTheDay);
             setDataAmazonMinDate(response.data.minPriceAmazon.timestamp);
@@ -43,7 +43,7 @@ const EvolutionPrix = () => {
   
   const retrieveData = () => {
     
-        axios.get(`http://localhost:5000/DataGraph/FindAll`)
+        axios.get(`http://tdd.biborne.com/DataGraph/FindAll`)
           .then(response => {
             setDataGoogle(response.data.evolution.googleAveragePrices);
             setDataAmazon(response.data.evolution.amazonAveragePrices);
