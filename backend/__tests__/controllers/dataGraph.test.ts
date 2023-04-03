@@ -18,7 +18,7 @@ afterAll(async () => {
 });
 
   describe('GET /DataGraph/FindAll', () => {
-    it('should return a list of users', async () => {
+    it('should return getAllDataGraphs', async () => {
       // Utilisez Supertest pour tester l'API
       const response = await request(app).get('/DataGraph/FindAll');
       
@@ -29,5 +29,28 @@ afterAll(async () => {
     });
   });
 
-  // Ajoutez d'autres tests pour les autres routes ou méthodes du controller
+  // getDetailsAchatVente
+
+  describe('GET /DataGraph/FindAllAV', () => {
+    it('should return getDetailsAchatVente', async () => {
+      // Utilisez Supertest pour tester l'API
+      const response = await request(app).get('/DataGraph/FindAllAV');
+      
+      // Vérifiez si la réponse est conforme à vos attentes
+      expect(response.status).toBe(200);
+    });
+  });
+
+  // getAllDataTable
+
+  describe('GET /DataGraph/FindAllAV', () => {
+    it('should return getAllDataTable', async () => {
+      // Utilisez Supertest pour tester l'API
+      const response = await request(app).get('/DataGraph/FindAllTable');
+      
+      // Vérifiez si la réponse est conforme à vos attentes
+      expect(response.status).toBe(200);
+    });
+  });
+
 });
