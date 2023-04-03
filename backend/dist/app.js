@@ -11,7 +11,7 @@ exports.app = (0, express_1.default)();
 // Vos middlewares et routes Express ici
 db_1.default.on("error", console.error.bind(console, "MongoDB connection error:"));
 db_1.default.once("open", () => {
-    exports.app.listen(5000, () => {
-        console.log("Server listening on port 5000");
+    exports.app.listen(3000, () => {
+        console.log("Server listening on port 3000");
     });
 });
