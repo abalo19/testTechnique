@@ -18,7 +18,7 @@ let mongoServer;
 beforeAll(() => __awaiter(void 0, void 0, void 0, function* () {
     mongoServer = new mongodb_memory_server_1.MongoMemoryServer();
     //   const mongoUri = await mongoServer.getUri();
-    yield mongoose_1.default.connect("mongodb://localhost:27017/tddDabase");
+    yield mongoose_1.default.connect("mongodb://127.0.0.1:27017/tddDabase");
 }));
 afterAll(() => __awaiter(void 0, void 0, void 0, function* () {
     yield mongoose_1.default.disconnect();
