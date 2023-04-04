@@ -148,28 +148,28 @@ const EvolutionPrix = () => {
             </Grid>
             
             <Grid item xs={8} style={{paddingTop: "50px"}}>
-            <Box p={2} display="flex" alignItems="center">
-              <Box flexGrow={1}>
-                <Typography variant="h7" align="center">
-                  Aymen devrait acheter 100.000 € d'action Amazon le {dataAmazonMinDate} au prix de {ConvertirMonetaire(dataAmazonMin)}
-                </Typography>
+              <Box p={2} display="flex" alignItems="center">
+                <Box flexGrow={1}>
+                  <Typography variant="body1" align="center">
+                    Aymen devrait acheter 100.000 € d'action Amazon le {dataAmazonMinDate} au prix de {ConvertirMonetaire(dataAmazonMin)}
+                  </Typography>
+                </Box>
+                <Box flexGrow={1}>
+                  <Typography variant="body1" align="center">
+                    Il devrait ensuite vendre ces actions le {dataAmazonMaxDate} au prix {dataAmazonMax} € pour faire un gain de {ConvertirMonetaire(dataAmazonMax - dataAmazonMin)}
+                  </Typography>
+                </Box>
+                <Box flexGrow={1}>
+                  <Typography variant="body1" align="center">
+                    Anouar devrait acheter 100.000 € d'action Google le {dataGoogleMinDate} au prix de {ConvertirMonetaire(dataGoogleMin)}
+                  </Typography>
+                </Box>
+                <Box flexGrow={1}>
+                  <Typography variant="body1" align="center">
+                    Il devrait ensuite vendre ces actions le {dataGoogleMaxDate} au prix {ConvertirMonetaire(dataGoogleMax)} pour faire un gain de {ConvertirMonetaire(dataGoogleMax - dataGoogleMin)}
+                  </Typography>
+                </Box>
               </Box>
-              <Box flexGrow={1}>
-                <Typography variant="h7" align="center">
-                  Il devrait ensuite vendre ces actions le {dataAmazonMaxDate} au prix {dataAmazonMax} € pour faire un gain de {ConvertirMonetaire(dataAmazonMax - dataAmazonMin)}
-                </Typography>
-              </Box>
-              <Box flexGrow={1}>
-                <Typography variant="h7" align="center">
-                  Anouar devrait acheter 100.000 € d'action Google le {dataGoogleMinDate} au prix de {ConvertirMonetaire(dataGoogleMin)}
-                </Typography>
-              </Box>
-              <Box flexGrow={1}>
-                <Typography variant="h7" align="center">
-                  Il devrait ensuite vendre ces actions le {dataGoogleMaxDate} au prix {ConvertirMonetaire(dataGoogleMax)} pour faire un gain de {ConvertirMonetaire(dataGoogleMax - dataGoogleMin)}
-                </Typography>
-              </Box>
-            </Box>
           </Grid>
 
         </Grid>
