@@ -28,7 +28,7 @@ describe('UserController', () => {
         yield mongoServer.stop();
     }));
     describe('GET /DataGraph/FindAll', () => {
-        it('should return a list of users', () => __awaiter(void 0, void 0, void 0, function* () {
+        it('should return getAllDataGraphs', () => __awaiter(void 0, void 0, void 0, function* () {
             // Utilisez Supertest pour tester l'API
             const response = yield (0, supertest_1.default)(app_1.app).get('/DataGraph/FindAll');
             // Vérifiez si la réponse est conforme à vos attentes
@@ -37,5 +37,22 @@ describe('UserController', () => {
             expect(response.body.evolution.amazonAveragePrices).toBeInstanceOf(Array);
         }));
     });
-    // Ajoutez d'autres tests pour les autres routes ou méthodes du controller
+    // getDetailsAchatVente
+    describe('GET /DataGraph/FindAllAV', () => {
+        it('should return getDetailsAchatVente', () => __awaiter(void 0, void 0, void 0, function* () {
+            // Utilisez Supertest pour tester l'API
+            const response = yield (0, supertest_1.default)(app_1.app).get('/DataGraph/FindAllAV');
+            // Vérifiez si la réponse est conforme à vos attentes
+            expect(response.status).toBe(200);
+        }));
+    });
+    // getAllDataTable
+    describe('GET /DataGraph/FindAllAV', () => {
+        it('should return getAllDataTable', () => __awaiter(void 0, void 0, void 0, function* () {
+            // Utilisez Supertest pour tester l'API
+            const response = yield (0, supertest_1.default)(app_1.app).get('/DataGraph/FindAllTable');
+            // Vérifiez si la réponse est conforme à vos attentes
+            expect(response.status).toBe(200);
+        }));
+    });
 });

@@ -61,7 +61,7 @@ const getAllDataGraphs = (req, res, next) => __awaiter(void 0, void 0, void 0, f
         // }
         return res
             .status(200)
-            .json({ data: datagraphs, message: "Liste de tous les DataGraphs", evolution: { googleAveragePrices, amazonAveragePrices } });
+            .json({ message: "Liste de tous les DataGraphs", evolution: { googleAveragePrices, amazonAveragePrices } });
     }
     catch (error) {
         return res.status(500).json({ message: "Erreur lors de la récupération des DataGraphs", error });

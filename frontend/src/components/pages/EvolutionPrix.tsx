@@ -20,7 +20,7 @@ const EvolutionPrix = () => {
   
   const retrieveDetails = () => {
     
-        axios.get(`http://tdd.biborne.com/DataGraph/FindAllAV`)
+        axios.get(`${process.env.REACT_APP_API_URL}/DataGraph/FindAllAV`)
           .then(response => {
             setDataAmazonMin(response.data.minPriceAmazon.lowestPriceOfTheDay);
             setDataAmazonMinDate(response.data.minPriceAmazon.timestamp);
@@ -43,7 +43,7 @@ const EvolutionPrix = () => {
   
   const retrieveData = () => {
     
-        axios.get(`http://tdd.biborne.com/DataGraph/FindAll`)
+        axios.get(`${process.env.REACT_APP_API_URL}/DataGraph/FindAll`)
           .then(response => {
             setDataGoogle(response.data.evolution.googleAveragePrices);
             setDataAmazon(response.data.evolution.amazonAveragePrices);
@@ -120,6 +120,12 @@ const EvolutionPrix = () => {
       },
     ];
 
+    const ConvertirMonetaire = (value) => {
+      const ValueParseFloat = parseFloat(value);
+      const FinalValue = ValueParseFloat.toLocaleString("fr-FR", {style: "currency", currency: "EUR"});
+    return FinalValue;
+    }
+
     return  (
     <div>
         <Grid
@@ -142,22 +148,30 @@ const EvolutionPrix = () => {
             </Grid>
             
             <Grid item xs={8} style={{paddingTop: "50px"}}>
-              
-                <Box p={2} display="flex" alignItems="center">
-                  <Box flexGrow={1}>
-                      <Typography variant="h7" align="center">Aymen devrait acheter 100.000 € d'action Amazon le {dataAmazonMinDate} au prix de {dataAmazonMin} € </Typography>
-                  </Box>
-                  <Box flexGrow={1}>
-                      <Typography variant="h7" align="center">Il devrait ensuite vendre ces actions le {dataAmazonMaxDate} au prix {dataAmazonMax} € pour faire un gain de xx,xx € </Typography>
-                  </Box>
-                  <Box flexGrow={1}>
-                      <Typography variant="h7" align="center">Anouar devrait acheter 100.000 € d'action Google le {dataGoogleMinDate} au prix de {dataGoogleMin} € </Typography>
-                  </Box>
-                  <Box flexGrow={1}>
-                      <Typography variant="h7" align="center">Il devrait ensuite vendre ces actions le {dataGoogleMaxDate} au prix {dataGoogleMax} € pour faire un gain de xx,xx € </Typography>
-                  </Box>
-                </Box>
-            </Grid>
+            <Box p={2} display="flex" alignItems="center">
+              <Box flexGrow={1}>
+                <Typography variant="h7" align="center">
+                  Aymen devrait acheter 100.000 € d'action Amazon le {dataAmazonMinDate} au prix de {ConvertirMonetaire(dataAmazonMin)}
+                </Typography>
+              </Box>
+              <Box flexGrow={1}>
+                <Typography variant="h7" align="center">
+                  Il devrait ensuite vendre ces actions le {dataAmazonMaxDate} au prix {dataAmazonMax} € pour faire un gain de {ConvertirMonetaire(dataAmazonMax - dataAmazonMin)}
+                </Typography>
+              </Box>
+              <Box flexGrow={1}>
+                <Typography variant="h7" align="center">
+                  Anouar devrait acheter 100.000 € d'action Google le {dataGoogleMinDate} au prix de {ConvertirMonetaire(dataGoogleMin)}
+                </Typography>
+              </Box>
+              <Box flexGrow={1}>
+                <Typography variant="h7" align="center">
+                  Il devrait ensuite vendre ces actions le {dataGoogleMaxDate} au prix {ConvertirMonetaire(dataGoogleMax)} pour faire un gain de {ConvertirMonetaire(dataGoogleMax - dataGoogleMin)}
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+
         </Grid>
     </div>
     );
